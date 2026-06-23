@@ -1,0 +1,12 @@
+stages:
+
+  data_ingestion:
+
+    cmd: python src/data/data_ingestion.py
+    deps:
+      - src/data/data_ingestion.py
+      - 1M youtube_comments_cleaned.csv
+      - params.yaml
+    outs:
+      - data/raw/cleaned_data.parquet
+      - data/raw/ingestion_report.json

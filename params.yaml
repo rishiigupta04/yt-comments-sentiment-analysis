@@ -1,0 +1,5 @@
+data_ingestion:
+
+  source: "1M youtube_comments_cleaned.csv"
+  output_dir: "data/raw"
+  random_state: 42
