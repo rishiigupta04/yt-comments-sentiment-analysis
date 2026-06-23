@@ -3,3 +3,12 @@ data_ingestion:
   source: "1M youtube_comments_cleaned.csv"
   output_dir: "data/raw"
   random_state: 42
+
+
+data_preprocessing:
+
+  input_path: "data/raw/cleaned_data.parquet"
+  output_dir: "data/processed"
+  test_size: 0.10
+  val_size: 0.10
+  random_state: 42

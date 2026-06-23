@@ -3,10 +3,29 @@ stages:
   data_ingestion:
 
     cmd: python src/data/data_ingestion.py
+
     deps:
       - src/data/data_ingestion.py
       - 1M youtube_comments_cleaned.csv
       - params.yaml
+
     outs:
+      - data/raw/cleaned_data.parquet:
+          persist: true
+      - data/raw/ingestion_report.json:
+          persist: true
+
+  data_preprocessing:
+
+    cmd: python src/data/data_preprocessing.py
+
+    deps:
+      - src/data/data_preprocessing.py
+      - params.yaml
       - data/raw/cleaned_data.parquet
-      - data/raw/ingestion_report.json
+
+    outs:
+      - data/processed/train.parquet
+      - data/processed/val.parquet
+      - data/processed/test.parquet
+      - data/processed/preprocessing_report.json
