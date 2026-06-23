@@ -29,3 +29,27 @@ stages:
       - data/processed/val.parquet
       - data/processed/test.parquet
       - data/processed/preprocessing_report.json
+
+
+
+  feature_engineering:
+
+    cmd: python src/features/feature_engineering.py
+
+    deps:
+      - src/features/feature_engineering.py
+      - params.yaml
+      - data/processed/train.parquet
+      - data/processed/val.parquet
+      - data/processed/test.parquet
+
+    outs:
+      - artifacts/features/y_train.npy
+      - artifacts/features/y_val.npy
+      - artifacts/features/y_test.npy
+
+      - artifacts/features/label_encoder.pkl
+
+      - artifacts/features/tokenizer
+
+      - artifacts/features/feature_report.json

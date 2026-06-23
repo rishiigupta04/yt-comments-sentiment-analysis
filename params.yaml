@@ -12,3 +12,15 @@ data_preprocessing:
   test_size: 0.10
   val_size: 0.10
   random_state: 42
+
+feature_engineering:
+
+  train_path: "data/processed/train.parquet"
+
+  val_path: "data/processed/val.parquet"
+
+  test_path: "data/processed/test.parquet"
+
+  model_name: "cardiffnlp/twitter-roberta-base-sentiment-latest"
+
+  output_dir: "artifacts/features"
