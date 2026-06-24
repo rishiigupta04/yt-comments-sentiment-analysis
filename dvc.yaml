@@ -53,3 +53,24 @@ stages:
       - artifacts/features/tokenizer
 
       - artifacts/features/feature_report.json
+
+  train_model:
+
+    cmd: python src/model/train.py
+
+    deps:
+      - src/model/train.py
+      - params.yaml
+      - data/processed/train.parquet
+      - data/processed/val.parquet
+      - data/processed/test.parquet
+      - artifacts/backbone
+      - artifacts/features/tokenizer
+      - artifacts/features/label_encoder.pkl
+
+    outs:
+      - artifacts/models/best_model.pt
+      - artifacts/models/last_state.pt
+      - artifacts/models/training_history.csv
+      - artifacts/models/model_config.json
+      - artifacts/models/evaluation.json

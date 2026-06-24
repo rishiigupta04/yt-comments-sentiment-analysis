@@ -24,3 +24,37 @@ feature_engineering:
   model_name: "cardiffnlp/twitter-roberta-base-sentiment-latest"
 
   output_dir: "artifacts/features"
+
+
+
+
+training:
+
+  model_name: "artifacts/backbone"
+
+  output_dir: "artifacts/models"
+
+  max_length: 192
+
+  freeze_layers: 4
+
+  epochs: 6
+
+  patience: 2
+
+  resume: false
+
+  loss_type: "weighted_ce"
+
+  focal_gamma: 2.0
+
+  lr_head: 0.0003
+  lr_backbone: 0.00001
+
+  layer_decay: 0.95
+
+  weight_decay: 0.01
+
+  warmup_ratio: 0.03
+
+  train_sample_size: 250000
