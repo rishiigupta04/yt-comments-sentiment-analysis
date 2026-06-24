@@ -31,20 +31,32 @@ ARTIFACT_DIR = Path("artifacts")
 MODEL_DIR = ARTIFACT_DIR / "models"
 
 FEATURE_DIR = ARTIFACT_DIR / "features"
+#
+# MODEL_PATH = (
+#     MODEL_DIR /
+#     "best_model.pt"
+# )
+#
+# MODEL_CONFIG_PATH = (
+#     MODEL_DIR /
+#     "model_config.json"
+# )
+#
+# TOKENIZER_PATH = (
+#     FEATURE_DIR /
+#     "tokenizer"
+# )
 
-MODEL_PATH = (
-    MODEL_DIR /
-    "best_model.pt"
+HF_MODEL_ID = (
+    "rishigupta04/yt-comment-analyzer-model"
 )
 
-MODEL_CONFIG_PATH = (
-    MODEL_DIR /
-    "model_config.json"
+tokenizer = AutoTokenizer.from_pretrained(
+    HF_MODEL_ID
 )
 
-TOKENIZER_PATH = (
-    FEATURE_DIR /
-    "tokenizer"
+model = AutoModelForSequenceClassification.from_pretrained(
+    HF_MODEL_ID
 )
 
 LABEL_ENCODER_PATH = (
