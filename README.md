@@ -29,6 +29,7 @@
 
 ---
 </div>
+
 **CommentSense** is an end-to-end NLP and MLOps project for sentiment analysis on YouTube comments.
 
 Built by fine-tuning **Twitter-RoBERTa** on **1 Million+ YouTube comments**, CommentSense understands internet slang, emojis, creator-audience interactions, and social-media language patterns that traditional sentiment models often fail to capture.
@@ -37,9 +38,9 @@ Unlike most sentiment-analysis projects that immediately jump to transformers, C
 
 ### 🚀 Links
 
-* 🤗 Hugging Face Model → [Link]
-* 🚀 Hugging Face Space → [Link]
-* 📖 API Documentation → [Link]
+* 🤗 Hugging Face Model → [https://huggingface.co/rishigupta04/yt-comments-sentiment-analyzer]
+* 🚀 Hugging Face Space → [https://huggingface.co/spaces/rishigupta04/yt-comments-sentiment-analyzer]
+* 📖 API Documentation → [https://rishigupta04-commentsense.hf.space/docs]
 
 ---
 
