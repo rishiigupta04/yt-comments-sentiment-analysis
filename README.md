@@ -2,8 +2,7 @@
   <img src="./logo.png" width="50%">
 </p>
 
- 
-### Understanding YouTube Sentiment at Scale
+
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
