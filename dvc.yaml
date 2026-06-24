@@ -74,3 +74,32 @@ stages:
       - artifacts/models/training_history.csv
       - artifacts/models/model_config.json
       - artifacts/models/evaluation.json
+
+  model_evaluation:
+    cmd: python src/evaluation/model_evaluation.py
+
+    deps:
+      - src/evaluation/model_evaluation.py
+      - artifacts/models/best_model.pt
+      - data/processed/test.parquet
+
+    outs:
+      - artifacts/evaluation
+
+    metrics:
+      - artifacts/evaluation/evaluation_summary.json
+
+  external_validation:
+
+    cmd: python src/evaluation/external_validation.py
+
+    deps:
+      - src/evaluation/external_validation.py
+      - artifacts/models/best_model.pt
+      - data/external/real_world_comments.csv
+
+    outs:
+      - artifacts/external_validation
+
+    metrics:
+      - artifacts/external_validation/external_validation.json
