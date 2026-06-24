@@ -1,174 +1,206 @@
-# 🎬 YouTube Comments Sentiment Analyzer
+```
+ ██████╗ ██████╗ ███╗   ███╗███╗   ███╗███████╗███╗   ██╗████████╗
+██╔════╝██╔═══██╗████╗ ████║████╗ ████║██╔════╝████╗  ██║╚══██╔══╝
+██║     ██║   ██║██╔████╔██║██╔████╔██║█████╗  ██╔██╗ ██║   ██║
+██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║
+╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗██║ ╚████║   ██║
+ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝
 
-<div align="center">
+ ███████╗███████╗███╗   ██╗███████╗███████╗
+ ██╔════╝██╔════╝████╗  ██║██╔════╝██╔════╝
+ ███████╗█████╗  ██╔██╗ ██║███████╗█████╗
+ ╚════██║██╔══╝  ██║╚██╗██║╚════██║██╔══╝
+ ███████║███████╗██║ ╚████║███████║███████╗
+ ╚══════╝╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝
+```
 
-### Fine-Tuning Twitter-RoBERTa on 1M+ YouTube Comments for Real-World Sentiment Analysis
+### Understanding YouTube Sentiment at Scale
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
-![Transformers](https://img.shields.io/badge/HuggingFace-Transformers-yellow)
+![Transformers](https://img.shields.io/badge/🤗_Transformers-RoBERTa-yellow)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Production-green)
-![License](https://img.shields.io/badge/License-MIT-brightgreen)
+![LightGBM](https://img.shields.io/badge/LightGBM-Baseline-success)
+![Optuna](https://img.shields.io/badge/Optuna-HPO-orange)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-Deployed-yellow)
 
 ---
 
-### 🚀 Live Demo
+**CommentSense** is an end-to-end NLP and MLOps platform for sentiment analysis on YouTube comments.
 
-🤗 **Hugging Face Space:** [Coming Soon]
+Built by fine-tuning **Twitter-RoBERTa** on **1 Million+ YouTube comments**, CommentSense understands internet slang, emojis, creator-audience interactions, and social-media language patterns that traditional sentiment models often fail to capture.
 
-### 🤗 Model Repository
+Unlike most sentiment-analysis projects that immediately jump to transformers, CommentSense follows a complete machine learning journey—from classical NLP baselines to modern transformer architectures—allowing performance gains, trade-offs, and design decisions to be measured at every stage.
 
-🤗 **Hugging Face Model:** [Coming Soon]
+### 🚀 Links
 
-### 📖 API Documentation
-
-📄 **Swagger Docs:** [Coming Soon]
-
----
-
-## 🎯 Real-World Performance
-
-| Metric | Score |
-|----------|----------|
-| Accuracy | **88.00%** |
-| Macro F1 | **87.68%** |
-| Weighted F1 | **87.73%** |
-
-Evaluated on a manually curated benchmark of realistic YouTube comments containing emojis, slang, creator terminology, and internet culture references.
-
-</div>
+* 🤗 Hugging Face Model → [Link]
+* 🚀 Hugging Face Space → [Link]
+* 📖 API Documentation → [Link]
 
 ---
 
-# 📌 Problem Statement
+# 🎯 Why CommentSense?
 
-Traditional sentiment analysis models often struggle with:
+Most sentiment-analysis systems are trained on:
 
-- Internet slang
-- Emoji-heavy comments
-- Short-form reactions
-- Creator-specific terminology
-- YouTube culture references
-- Informal language
+* Product reviews
+* Movie reviews
+* News articles
+* Formal text
 
-Examples:
+But YouTube comments are fundamentally different.
 
 ```text
 W video bro 🔥
+
 Absolute cinema
+
 Bro cooked 💀
+
 Nah this ain't it
+
+First!!!
+
+Who's here in 2026?
 ```
 
-These expressions are common on YouTube but often poorly handled by traditional NLP pipelines.
+These comments contain:
 
-This project adapts a social-media-aware transformer to the YouTube ecosystem through large-scale fine-tuning and deployment.
+* Internet slang
+* Emojis
+* Creator terminology
+* Meme culture
+* Short context
+* Informal grammar
 
----
+Traditional NLP approaches struggle because they rely heavily on token frequencies and manually engineered features.
 
-# 🧠 Why This Project?
-
-Most sentiment projects stop after training a model.
-
-This project was built as an end-to-end Data Science + MLOps system covering:
-
-- Data preprocessing
-- Feature engineering
-- Traditional ML
-- Hyperparameter optimization
-- Transformer fine-tuning
-- Evaluation
-- External validation
-- API development
-- Model deployment
-- Production inference
+CommentSense was built specifically to understand how people communicate on YouTube.
 
 ---
 
-# 🏗️ Project Architecture
+# ✨ What It Does
+
+
+<p align="center">
+  <img src="./pipeline.png" width="100%">
+</p>
+
+
+
+### Core Features
+
+✅ Positive / Neutral / Negative Classification
+
+✅ Social-Media-Aware Transformer
+
+✅ Emoji & Slang Understanding
+
+✅ Real-Time FastAPI Inference
+
+✅ Hugging Face Deployment
+
+✅ Chrome Extension Ready
+
+✅ Production API
+
+---
+
+# 📊 Performance
+
+### Real-World External Validation Benchmark
+
+A manually curated benchmark designed to simulate real YouTube comments.
+
+Included:
+
+* Internet slang
+* Emojis
+* Creator terminology
+* Viral phrases
+* Mixed sentiment
+* Short-form reactions
+
+| Metric      | Score      |
+| ----------- | ---------- |
+| Accuracy    | **88.00%** |
+| Macro F1    | **87.68%** |
+| Weighted F1 | **87.73%** |
+
+Unlike standard train-test evaluation, this benchmark was designed to better approximate real-world deployment performance.
+
+---
+
+# 🧠 Why Twitter-RoBERTa?
+
+Instead of training a transformer from scratch, CommentSense leverages:
 
 ```text
-YouTube Comments
-        ↓
-Data Cleaning
-        ↓
-Transformer Preprocessing
-        ↓
-Twitter-RoBERTa Backbone
-        ↓
-Fine-Tuning on YouTube Dataset
-        ↓
-Evaluation
-        ↓
-External Validation
-        ↓
-FastAPI API
-        ↓
-Hugging Face Spaces
-        ↓
-Chrome Extension
+cardiffnlp/twitter-roberta-base-sentiment-latest
 ```
 
----
+Twitter/X and YouTube comments share many linguistic characteristics:
 
-# 📊 Project Pipeline
+* Informal writing
+* Emojis
+* Slang
+* Social-media culture
+* Short text
 
-![Pipeline](./pipeline.png)
+This makes Twitter-RoBERTa an ideal starting point for transfer learning.
 
----
-
-# 📁 Dataset
-
-## Dataset Overview
-
-Large-scale YouTube comments sentiment dataset.
-
-### Size
+The model was then fine-tuned on a large-scale YouTube comments dataset containing over **1 Million labeled comments**, allowing it to adapt specifically to YouTube language patterns.
 
 ```text
-1,000,000+ Comments
+Twitter/X Posts
+        ↓
+Twitter-RoBERTa
+        ↓
+Fine-Tuning on 1M+ YouTube Comments
+        ↓
+CommentSense
 ```
 
-### Classes
+---
+
+# 🧪 Model Journey
+
+Most projects start here:
 
 ```text
-Positive
-Neutral
-Negative
+Dataset
+   ↓
+Transformer
+   ↓
+Done
 ```
 
-### Split
+CommentSense followed a different approach.
 
-| Dataset | Percentage |
-|----------|----------|
-| Train | 80% |
-| Validation | 10% |
-| Test | 10% |
+The objective was to understand:
 
----
+> How far can traditional NLP take us before transformers become necessary?
 
-# 🧪 Model Evolution & Decision-Making Journey
+```text
+Bag of Words
+      ↓
+Random Forest
+      ↓
+TF-IDF
+      ↓
+TF-IDF + N-Grams
+      ↓
+LightGBM
+      ↓
+LightGBM + Optuna
+      ↓
+Twitter-RoBERTa
+      ↓
+CommentSense
+```
 
-## Why Not Start With Transformers?
-
-Instead of immediately jumping to deep learning, the project followed a traditional machine learning workflow first.
-
-This helped answer:
-
-> Can simpler models solve the problem effectively before introducing the complexity of transformers?
-
-Benefits:
-
-- Faster experimentation
-- Strong baselines
-- Better dataset understanding
-- Quantifiable transformer improvements
-
----
-
-## Phase 1 — Baseline Model
-
-### Bag of Words + Random Forest
+## Phase 1 — Random Forest Baseline
 
 Pipeline:
 
@@ -178,27 +210,20 @@ Bag of Words
 Random Forest
 ```
 
-### Why?
-
-- Quick baseline
-- Easy interpretation
-- Fast experimentation
-
-### Result
+Result:
 
 ```text
-Accuracy ≈ 65%
+~65% Accuracy
 ```
 
-### Observations
+Key Observation:
 
-Struggled with:
+The model struggled with:
 
-- Emojis
-- Slang
-- Context
-- Negation
-- Short comments
+* Slang
+* Emojis
+* Negation
+* Contextual sentiment
 
 Example:
 
@@ -206,52 +231,34 @@ Example:
 W video bro 🔥
 ```
 
-The model could not understand that this represents positive sentiment.
-
-### Conclusion
-
-Keyword counting alone was insufficient.
+The model could not understand that this phrase expresses positive sentiment.
 
 ---
 
 ## Phase 2 — Feature Engineering
 
-### TF-IDF + N-Grams
-
 Experiments:
 
-- TF-IDF
-- TF-IDF + Bigrams
-- TF-IDF + Trigrams
-- Vocabulary optimization
+* TF-IDF
+* Bigrams
+* Trigrams
+* Vocabulary optimization
 
-### Why?
-
-TF-IDF captures informative words better than raw counts.
-
-N-grams help learn phrases such as:
+Result:
 
 ```text
-not good
-highly recommend
-w video
+~75% Accuracy
 ```
 
-### Result
-
-```text
-Accuracy ≈ 75%
-```
-
-### Key Learning
+Key Insight:
 
 Feature representation mattered more than model complexity.
 
+Better text representation produced larger gains than changing algorithms.
+
 ---
 
-## Phase 3 — Gradient Boosting
-
-### TF-IDF + LightGBM
+## Phase 3 — LightGBM
 
 Pipeline:
 
@@ -261,63 +268,50 @@ TF-IDF
 LightGBM
 ```
 
-### Why LightGBM?
+Why LightGBM?
 
-Compared to Random Forest:
+* Handles sparse features efficiently
+* Faster training
+* Better generalization
+* Strong tabular performance
 
-- Better with sparse data
-- Faster
-- Stronger generalization
-- Better scalability
-
-### Result
+Result:
 
 ```text
-Accuracy ≈ 86%
+~86% Accuracy
 ```
 
-### Key Insight
-
-Traditional NLP + Gradient Boosting was surprisingly competitive.
+This was the first model capable of delivering production-quality performance.
 
 ---
 
-## Phase 4 — Hyperparameter Optimization
+## Phase 4 — Optuna Hyperparameter Optimization
 
-### LightGBM + Optuna
+Parameters tuned:
 
-Parameters optimized:
+* Learning Rate
+* Max Depth
+* Num Leaves
+* Feature Count
+* Regularization
+* N-Gram Range
 
-- Learning Rate
-- Max Depth
-- Num Leaves
-- Feature Count
-- N-Gram Range
-- Regularization
-
-### Result
+Result:
 
 ```text
 Validation Macro F1 ≈ 0.91
 ```
 
-### Important Discovery
+One of the most valuable outcomes was discovering and fixing a data leakage issue that had artificially inflated earlier results.
 
-A data leakage issue was identified and fixed during experimentation.
+This reinforced the importance of rigorous evaluation and reproducible experimentation.
 
-This reinforced the importance of:
-
-- Proper train-test separation
-- Reliable evaluation pipelines
-- Validation discipline
-
----
 
 ## Why Move Beyond LightGBM?
 
-Despite strong validation performance, limitations remained.
+Despite achieving strong validation performance, several limitations remained.
 
-### Context Understanding
+Traditional NLP features treat text as token counts and cannot fully capture semantic meaning.
 
 Example:
 
@@ -325,69 +319,48 @@ Example:
 I thought this would be terrible but it was amazing
 ```
 
-TF-IDF cannot fully understand relationships between words.
+The sentiment depends on relationships between words rather than individual tokens.
 
----
-
-### Social Media Language
-
-Examples:
+Similarly, comments such as:
 
 ```text
-Bro cooked 🔥
-
 Absolute cinema
+
+Bro cooked 🔥
 
 W video
 
 Nah this ain't it
 ```
 
-These require semantic understanding rather than keyword matching.
+require understanding of internet culture, slang, and context.
+
+This is where transformer architectures begin to outperform traditional machine learning approaches.
 
 ---
 
-### Semantic Similarity
+# 🚀 Phase 5 — CommentSense
 
-Traditional NLP struggles to understand that:
+The final stage fine-tuned a social-media-aware transformer on YouTube comments.
 
-```text
-Amazing
-Fantastic
-Incredible
-```
-
-express similar sentiment.
-
-Transformers naturally learn these relationships.
-
----
-
-## Phase 5 — Transformer Fine-Tuning
-
-### Selected Backbone
+### Backbone
 
 ```text
 cardiffnlp/twitter-roberta-base-sentiment-latest
 ```
 
----
+### Why This Model?
 
-## Why Twitter-RoBERTa?
+Twitter/X and YouTube comments share many characteristics:
 
-Twitter/X and YouTube comments share:
+* Emojis
+* Informal writing
+* Slang
+* Abbreviations
+* Social-media language
+* Short text
 
-- Emojis
-- Slang
-- Informal language
-- Social media culture
-- Short text
-
-The model already possessed strong social-media language understanding.
-
----
-
-## Transfer Learning Strategy
+Rather than training a transformer from scratch, transfer learning was used.
 
 ```text
 Twitter/X Data
@@ -396,108 +369,100 @@ Twitter-RoBERTa
         ↓
 Fine-Tuning on 1M+ YouTube Comments
         ↓
-YouTube-Specific Sentiment Model
+CommentSense
 ```
 
----
+### Training Enhancements
 
-## Training Enhancements
+CommentSense incorporates:
 
-Implemented:
+* Mixed Precision Training (AMP)
+* Layer-wise Learning Rate Decay (LLRD)
+* Gradient Accumulation
+* Cosine Learning Rate Scheduler
+* Warmup Scheduling
+* Gradient Checkpointing
+* Early Stopping
+* Class Weighted Loss
+* Dynamic GPU Configuration
+* Checkpoint Recovery
 
-- Mixed Precision Training (AMP)
-- Layer-wise Learning Rate Decay (LLRD)
-- Gradient Accumulation
-- Cosine LR Scheduler
-- Warmup Scheduling
-- Gradient Checkpointing
-- Class Weighted Loss
-- Early Stopping
-- Best Checkpoint Saving
-- Resume Training Support
-
----
-
-# 🎯 Sentiment Classes
-
-| Label | Meaning |
-|---------|---------|
-| 🔴 Negative | Criticism, dislike, frustration |
-| ⚪ Neutral | Informational or objective |
-| 🟢 Positive | Praise, excitement, appreciation |
+The result is a transformer specifically adapted to YouTube comment sentiment analysis while retaining the social-media understanding learned during Twitter pretraining.
 
 ---
 
-# 📈 Evaluation Results
-
-## Real-World External Validation Benchmark
-
-A manually curated benchmark containing:
-
-- Internet slang
-- Emojis
-- Creator terminology
-- Viral phrases
-- Mixed sentiment
-- Realistic YouTube comments
-
-### Results
-
-| Metric | Score |
-|----------|----------|
-| Accuracy | **88.00%** |
-| Macro F1 | **87.68%** |
-| Weighted F1 | **87.73%** |
-
----
+# 📈 Evaluation
 
 ## Internal Test Set
 
-| Metric | Score |
-|----------|----------|
-| Accuracy | 77.43% |
-| Macro F1 | 77.38% |
+| Metric      | Score  |
+| ----------- | ------ |
+| Accuracy    | 77.43% |
+| Macro F1    | 77.38% |
 | Weighted F1 | 77.41% |
 
-The external benchmark is considered a more realistic estimate of deployment performance.
+The internal test set was sampled from the same distribution as the training data.
+
+---
+
+## Real-World External Validation
+
+To better estimate deployment performance, a separate benchmark was manually curated.
+
+Included:
+
+* Slang
+* Emojis
+* Creator terminology
+* Meme culture
+* Mixed sentiment
+* Ambiguous comments
+
+Examples:
+
+```text
+W video bro 🔥
+
+Absolute cinema
+
+Bro cooked 💀
+
+Who's here in 2026?
+
+Nah this ain't it
+```
+
+Results:
+
+| Metric      | Score  |
+| ----------- | ------ |
+| Accuracy    | 88.00% |
+| Macro F1    | 87.68% |
+| Weighted F1 | 87.73% |
+
+This benchmark is considered the most representative measure of real-world performance.
 
 ---
 
 
 # 📊 Normalized Confusion Matrix
 
-The model performs consistently across all sentiment classes.
+The model performs consistently across all sentiment classes without severe class imbalance.
 
-Most errors occur between Neutral and Positive classes.
+Most prediction errors occur between Neutral and Positive comments.
 
 Negative sentiment is generally detected more reliably.
 
-![Normalized Confusion Matrix](artifacts/evaluation/normalized_confusion_matrix.png)
+<p align="center">
+  <img src="artifacts/evaluation/normalized_confusion_matrix.png" width="50%">
+</p>
 
 ---
 
 # 🔥 Example Predictions
 
-### Example 1
 
-Input:
-
-```text
-W video bro 🔥
-```
-
-Prediction:
-
-```text
-Positive
-Confidence: 99.7%
-```
-
----
-
-### Example 2
-
-Input:
+### Positive
 
 ```text
 Absolute cinema
@@ -511,12 +476,10 @@ Positive
 
 ---
 
-### Example 3
-
-Input:
+### Negative
 
 ```text
-nah this ain't it
+Nah this ain't it
 ```
 
 Prediction:
@@ -525,27 +488,10 @@ Prediction:
 Negative
 ```
 
----
-
-### Example 4
-
-Input:
-
-```text
-Worst update ever
-```
-
-Prediction:
-
-```text
-Negative
-```
 
 ---
 
-### Example 5
-
-Input:
+### Neutral
 
 ```text
 Uploaded 2 hours ago
@@ -559,7 +505,7 @@ Neutral
 
 ---
 
-# 🚀 Deployment Architecture
+# 🚀 Deployment
 
 ```text
 YouTube Comment
@@ -568,18 +514,40 @@ Chrome Extension
         ↓
 FastAPI API
         ↓
-Hugging Face Spaces
+Hugging Face Space
         ↓
-Fine-Tuned RoBERTa
+CommentSense
         ↓
 Sentiment + Confidence
 ```
 
+### Components
+
+#### Hugging Face Model
+
+Stores:
+
+* Fine-tuned weights
+* Tokenizer
+* Configuration
+
+#### Hugging Face Space
+
+Hosts:
+
+* FastAPI backend
+* Interactive demo
+* Real-time inference
+
+#### Chrome Extension
+
+Provides sentiment analysis directly within the YouTube experience.
+
 ---
 
-# 📖 API Example
+# 💻 API Example
 
-## Request
+### Request
 
 ```http
 POST /predict
@@ -591,7 +559,7 @@ POST /predict
 }
 ```
 
-## Response
+### Response
 
 ```json
 {
@@ -602,38 +570,39 @@ POST /predict
 
 ---
 
-# 🛠️ Tech Stack
+# 🛠 Tech Stack
 
 ## NLP
 
-- Hugging Face Transformers
-- RoBERTa
-- Tokenizers
+* Hugging Face Transformers
+* RoBERTa
+* Tokenizers
 
 ## Machine Learning
 
-- PyTorch
-- Scikit-Learn
-- LightGBM
-- Optuna
+* PyTorch
+* Scikit-Learn
+* LightGBM
+* Optuna
 
 ## Data Processing
 
-- Pandas
-- NumPy
+* Pandas
+* NumPy
 
 ## MLOps
 
-- DVC
-- FastAPI
-- Hugging Face Hub
-- Hugging Face Spaces
+* DVC
+* FastAPI
+* Docker
+* Hugging Face Hub
+* Hugging Face Spaces
 
 ## Deployment
 
-- Docker
-- FastAPI
-- Hugging Face
+* FastAPI
+* Hugging Face
+* Chrome Extension
 
 ---
 
@@ -659,33 +628,33 @@ data/
 
 ---
 
-# 📚 Key Learnings
+# 🎓 Key Learnings
 
-- Data leakage can dramatically inflate performance.
-- Validation scores do not always reflect real-world performance.
-- External validation is critical.
-- Feature engineering remains valuable even in the transformer era.
-- Transfer learning drastically reduces training costs.
-- Deployment and monitoring are as important as modeling.
-
----
-
-# 🔮 Future Improvements
-
-- Multilingual sentiment analysis
-- Aspect-based sentiment analysis
-- Sarcasm detection
-- Quantized deployment
-- Real-time dashboard
-- Analytics platform for creators
+* Data leakage can dramatically inflate performance.
+* External validation is critical.
+* Validation scores do not always reflect deployment performance.
+* Feature engineering remains valuable even in the transformer era.
+* Transfer learning drastically reduces training costs.
+* MLOps and deployment are as important as model training.
 
 ---
 
-# 🔗 Links
+# 🔮 Future Roadmap
 
-- 🤗 Hugging Face Model: [Add Link]
-- 🚀 Hugging Face Space: [Add Link]
-- 💼 LinkedIn: [Add Link]
+### Model Improvements
+
+* Multilingual Sentiment Analysis
+* Sarcasm Detection
+* Emotion Classification
+* Aspect-Based Sentiment Analysis
+
+### Product Improvements
+
+* Creator Analytics Dashboard
+* Brand Monitoring
+* Comment Trend Analysis
+* Real-Time Stream Processing
+
 
 ---
 
@@ -695,21 +664,21 @@ data/
 
 M.Sc. Data Science
 
-This project demonstrates:
+CommentSense was built as an end-to-end NLP and MLOps project demonstrating:
 
-✅ End-to-End NLP Pipeline
+✅ Traditional NLP Baselines
 
-✅ Transformer Fine-Tuning
-
-✅ Traditional ML Benchmarking
+✅ Feature Engineering
 
 ✅ Hyperparameter Optimization
 
+✅ Transformer Fine-Tuning
+
 ✅ Evaluation & Error Analysis
 
-✅ MLOps Practices
+✅ External Validation
 
-✅ FastAPI Deployment
+✅ FastAPI Development
 
 ✅ Hugging Face Deployment
 
@@ -717,10 +686,7 @@ This project demonstrates:
 
 ---
 
-<div align="center">
-
 ### ⭐ If you found this project interesting, consider giving it a star.
 
-Built with ❤️ using PyTorch, Transformers and FastAPI.
+Built with ❤️ using PyTorch, Transformers, FastAPI, and Hugging Face.
 
-</div>
