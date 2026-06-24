@@ -26,7 +26,7 @@
 
 ---
 
-**CommentSense** is an end-to-end NLP and MLOps platform for sentiment analysis on YouTube comments.
+**CommentSense** is an end-to-end NLP and MLOps project for sentiment analysis on YouTube comments.
 
 Built by fine-tuning **Twitter-RoBERTa** on **1 Million+ YouTube comments**, CommentSense understands internet slang, emojis, creator-audience interactions, and social-media language patterns that traditional sentiment models often fail to capture.
 
