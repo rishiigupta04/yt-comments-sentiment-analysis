@@ -91,3 +91,4 @@ target/
 data/raw/
 artifacts/models
 artifacts/backbone/model.safetensors
+artifacts/deployment_model/model.safetensors
