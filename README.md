@@ -443,7 +443,7 @@ Most prediction errors occur between Neutral and Positive comments.
 Negative sentiment is generally detected more reliably.
 
 <p align="center">
-  <img src="artifacts/evaluation/normalized_confusion_matrix.png" width="50%">
+  <img src="artifacts/evaluation/normalized_confusion_matrix.png" width="70%">
 </p>
 
 ---
