@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=2WUpTMFsKD4">
+  <a href="https://www.youtube.com/watch?v=2WUpTMFsKD4" target="_blank">
     <strong>▶ Watch the Demo Video</strong>
   </a>
 </p>
