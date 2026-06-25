@@ -1,0 +1,206 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+
+    width: 340px;
+
+    min-height: 480px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #0f172a,
+            #111827
+        );
+
+    color: white;
+
+    font-family:
+        Inter,
+        sans-serif;
+}
+
+.app {
+
+    padding: 24px;
+}
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 24px;
+}
+
+.logo {
+
+    width: 88px;
+
+    height: 88px;
+
+    border-radius: 20px;
+
+    margin-bottom: 16px;
+
+    box-shadow:
+
+        0 0 40px rgba(
+            99,
+            102,
+            241,
+            0.35
+        );
+}
+
+.hero h1 {
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.hero p {
+
+    font-size: 13px;
+
+    color: #94a3b8;
+}
+
+.status-grid {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.status-card {
+
+    flex: 1;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            0.05
+        );
+
+    border:
+
+        1px solid rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+}
+
+.status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+}
+
+.selector-card {
+
+    margin-bottom: 18px;
+}
+
+.selector-card label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+.selector-card select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    outline: none;
+
+    background: #1e293b;
+
+    color: white;
+}
+
+#analyzeBtn {
+
+    width: 100%;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 14px;
+
+    border-radius: 16px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+}
+
+#analyzeBtn:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+#status {
+
+    margin-top: 16px;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}

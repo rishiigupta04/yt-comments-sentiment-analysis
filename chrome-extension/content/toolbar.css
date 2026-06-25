@@ -1,0 +1,944 @@
+/*
+======================================================
+CommentSense v2
+
+toolbar.css
+
+Professional dark UI
+Inspired by:
+- Linear
+- Notion
+- Vercel
+- Arc
+
+Only styling.
+No logic.
+======================================================
+*/
+
+/* ======================================================
+   Theme
+====================================================== */
+
+:root {
+
+    --cs-primary: #6366f1;
+
+    --cs-positive: #22c55e;
+
+    --cs-neutral: #9ca3af;
+
+    --cs-negative: #ef4444;
+
+    --cs-bg: #09090b;
+
+    --cs-surface: rgba(17, 24, 39, 0.92);
+
+    --cs-surface-light: rgba(31, 41, 55, 0.95);
+
+    --cs-border: rgba(255,255,255,.08);
+
+    --cs-text: #f8fafc;
+
+    --cs-text-muted: #94a3b8;
+
+    --cs-radius: 16px;
+
+    --cs-radius-sm: 10px;
+
+    --cs-shadow:
+
+        0 8px 32px rgba(0,0,0,.35);
+
+    --cs-transition:
+
+        .18s ease;
+
+    --cs-blur: blur(18px);
+
+    --cs-font:
+
+        Inter,
+
+        system-ui,
+
+        sans-serif;
+
+}
+
+/* ======================================================
+   Animations
+====================================================== */
+
+@keyframes csFade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes csPulse {
+
+    0% {
+
+        opacity: .75;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: .75;
+
+    }
+
+}
+
+/* ======================================================
+   Toolbar
+====================================================== */
+
+.cs-toolbar {
+
+    position: sticky;
+
+    top: 18px;
+
+    margin: 18px 0;
+
+    z-index: 9999;
+
+    width: 100%;
+
+    max-width: 380px;
+
+    background: var(--cs-surface);
+
+    backdrop-filter: var(--cs-blur);
+
+    -webkit-backdrop-filter: var(--cs-blur);
+
+    border: 1px solid var(--cs-border);
+
+    border-radius: var(--cs-radius);
+
+    box-shadow: var(--cs-shadow);
+
+    overflow: hidden;
+
+    color: var(--cs-text);
+
+    font-family: var(--cs-font);
+
+    animation:
+
+        csFade .25s ease;
+
+}
+
+/* ======================================================
+   Header
+====================================================== */
+
+.cs-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 16px 18px;
+
+    border-bottom:
+
+        1px solid var(--cs-border);
+
+}
+
+.cs-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+.cs-logo {
+
+    width: 28px;
+
+    height: 28px;
+
+    object-fit: contain;
+
+}
+
+.cs-collapse-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 34px;
+
+    height: 34px;
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--cs-text-muted);
+
+    transition:
+
+        background var(--cs-transition),
+
+        color var(--cs-transition);
+
+}
+
+.cs-collapse-btn:hover {
+
+    background:
+
+        rgba(255,255,255,.05);
+
+    color:
+
+        var(--cs-text);
+
+}
+
+/* ======================================================
+   Body
+====================================================== */
+
+.cs-body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    padding: 18px;
+
+}
+
+/* ======================================================
+   Divider
+====================================================== */
+
+.cs-divider {
+
+    height: 1px;
+
+    background:
+
+        var(--cs-border);
+
+}
+
+/* ======================================================
+   Status Badge
+====================================================== */
+
+.cs-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+
+        8px 12px;
+
+    border-radius:
+
+        999px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    width: fit-content;
+
+}
+
+.cs-status-ready {
+
+    background:
+
+        rgba(34,197,94,.12);
+
+    color:
+
+        var(--cs-positive);
+
+}
+
+.cs-status-analyzing {
+
+    background:
+
+        rgba(99,102,241,.12);
+
+    color:
+
+        var(--cs-primary);
+
+    animation:
+
+        csPulse 1.5s infinite;
+
+}
+
+.cs-status-cache {
+
+    background:
+
+        rgba(59,130,246,.12);
+
+    color:
+
+        #60a5fa;
+
+}
+
+.cs-status-error {
+
+    background:
+
+        rgba(239,68,68,.12);
+
+    color:
+
+        var(--cs-negative);
+
+}
+
+.cs-status-offline {
+
+    background:
+
+        rgba(245,158,11,.12);
+
+    color:
+
+        #f59e0b;
+
+}
+
+/* ======================================================
+   Buttons
+====================================================== */
+
+.cs-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 40px;
+
+    padding:
+
+        0 18px;
+
+    border: 1px solid transparent;
+
+    border-radius:
+
+        12px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+
+        all var(--cs-transition);
+
+    color:
+
+        var(--cs-text);
+
+    background:
+
+        rgba(255,255,255,.04);
+
+}
+
+.cs-btn:hover {
+
+    background:
+
+        rgba(255,255,255,.08);
+
+}
+
+.cs-btn:active {
+
+    transform:
+
+        scale(.98);
+
+}
+
+.cs-btn-primary {
+
+    background:
+
+        var(--cs-primary);
+
+    color:
+
+        white;
+
+}
+
+.cs-btn-primary:hover {
+
+    filter:
+
+        brightness(1.08);
+
+}
+
+.cs-btn-outline {
+
+    border-color:
+
+        var(--cs-border);
+
+}
+
+.cs-btn:disabled {
+
+    opacity: .5;
+
+    cursor: not-allowed;
+
+}
+
+/* ======================================================
+   Cards
+====================================================== */
+
+.cs-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background:
+
+        rgba(255,255,255,.03);
+
+    border:
+
+        1px solid var(--cs-border);
+
+}
+
+.cs-card-title {
+
+    font-size: 12px;
+
+    color:
+
+        var(--cs-text-muted);
+
+}
+
+.cs-card-value {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color:
+
+        var(--cs-text);
+
+}
+
+
+/* ======================================================
+   Statistics Grid
+====================================================== */
+
+.cs-stats {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+}
+
+.cs-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.03);
+
+    border: 1px solid var(--cs-border);
+
+}
+
+.cs-stat-label {
+
+    font-size: 12px;
+
+    color: var(--cs-text-muted);
+
+}
+
+.cs-stat-value {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: var(--cs-text);
+
+}
+
+/* ======================================================
+   Confidence
+====================================================== */
+
+.cs-confidence {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+}
+
+.cs-confidence-value {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+.cs-progress {
+
+    position: relative;
+
+    flex: 1;
+
+    height: 8px;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,.06);
+
+}
+
+.cs-progress-bar {
+
+    width: 0;
+
+    height: 100%;
+
+    background: var(--cs-primary);
+
+    transition: width .25s ease;
+
+}
+
+/* ======================================================
+   Filter Buttons
+====================================================== */
+
+.cs-filter-group {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+.cs-filter {
+
+    flex: 1;
+
+    min-width: 80px;
+
+}
+
+.cs-filter-active {
+
+    background: var(--cs-primary);
+
+    color: #fff;
+
+}
+
+.cs-filter-positive.cs-filter-active {
+
+    background: var(--cs-positive);
+
+}
+
+.cs-filter-neutral.cs-filter-active {
+
+    background: var(--cs-neutral);
+
+    color: #111827;
+
+}
+
+.cs-filter-negative.cs-filter-active {
+
+    background: var(--cs-negative);
+
+}
+
+/* ======================================================
+   Badges
+====================================================== */
+
+.cs-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    border: 1px solid var(--cs-border);
+
+    background: rgba(255,255,255,.04);
+
+}
+
+.cs-badge-positive {
+
+    color: var(--cs-positive);
+
+}
+
+.cs-badge-neutral {
+
+    color: var(--cs-neutral);
+
+}
+
+.cs-badge-negative {
+
+    color: var(--cs-negative);
+
+}
+
+.cs-badge-primary {
+
+    color: var(--cs-primary);
+
+}
+
+/* ======================================================
+   Sentiment Pills
+====================================================== */
+
+.cs-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+.cs-pill-positive {
+
+    background: rgba(34,197,94,.14);
+
+    color: var(--cs-positive);
+
+}
+
+.cs-pill-neutral {
+
+    background: rgba(156,163,175,.14);
+
+    color: var(--cs-neutral);
+
+}
+
+.cs-pill-negative {
+
+    background: rgba(239,68,68,.14);
+
+    color: var(--cs-negative);
+
+}
+
+/* ======================================================
+   Current Filter
+====================================================== */
+
+.cs-current-filter {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    font-size: 13px;
+
+}
+
+.cs-current-filter-value {
+
+    font-weight: 600;
+
+    color: var(--cs-primary);
+
+}
+
+/* ======================================================
+   Rows
+====================================================== */
+
+.cs-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+}
+
+.cs-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+/* ======================================================
+   Utilities
+====================================================== */
+
+.cs-hidden {
+
+    display: none !important;
+
+}
+
+.cs-fade {
+
+    animation: csFade .2s ease;
+
+}
+
+.cs-clickable {
+
+    cursor: pointer;
+
+}
+
+.cs-grow {
+
+    flex: 1;
+
+}
+
+.cs-center {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+/* ======================================================
+   Collapsed Toolbar
+====================================================== */
+
+.cs-toolbar.cs-collapsed .cs-body {
+
+    display: none;
+
+}
+
+.cs-toolbar.cs-collapsed {
+
+    overflow: hidden;
+
+}
+
+/* ======================================================
+   Scrollbar
+====================================================== */
+
+.cs-toolbar::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+.cs-toolbar::-webkit-scrollbar-thumb {
+
+    background: rgba(255,255,255,.12);
+
+    border-radius: 999px;
+
+}
+
+.cs-toolbar::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+/* ======================================================
+   Responsive
+====================================================== */
+
+@media (max-width: 900px) {
+
+    .cs-toolbar {
+
+        max-width: 100%;
+
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .cs-header {
+
+        padding: 14px;
+
+    }
+
+    .cs-body {
+
+        padding: 14px;
+
+    }
+
+    .cs-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .cs-filter {
+
+        min-width: calc(50% - 4px);
+
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation: none !important;
+
+        transition: none !important;
+
+    }
+
+}

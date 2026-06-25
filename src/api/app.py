@@ -20,6 +20,10 @@ from src.inference.schemas import (
     BatchPredictionResponse
 )
 
+from fastapi.middleware.cors import CORSMiddleware
+
+
+
 # =====================================================
 # LOGGING
 # =====================================================
@@ -46,7 +50,17 @@ app = FastAPI(
     description=
     "Transformer-based YouTube Sentiment Analysis"
 )
+app.add_middleware(
+    CORSMiddleware,
 
+    allow_origins=["*"],
+
+    allow_credentials=True,
+
+    allow_methods=["*"],
+
+    allow_headers=["*"]
+)
 # =====================================================
 # LOAD MODEL ON STARTUP
 # =====================================================

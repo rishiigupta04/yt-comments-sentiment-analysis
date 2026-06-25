@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CommentSense</title>
+
+    <link rel="stylesheet" href="popup.css">
+
+</head>
+
+<body>
+
+    <main class="cs-popup">
+
+        <!-- ==========================================
+             Header
+        =========================================== -->
+
+        <header class="cs-header">
+
+            <img
+
+                src="../../chrome-plugin%20v1/assets/icon.png"
+
+                alt="CommentSense Logo"
+
+                class="cs-logo">
+
+            <h1 class="cs-title">
+
+                CommentSense
+
+            </h1>
+
+            <p class="cs-subtitle">
+
+                AI-Powered YouTube Audience Intelligence
+
+            </p>
+
+        </header>
+
+        <!-- ==========================================
+             Extension Status
+        =========================================== -->
+
+        <section class="cs-card">
+
+            <h2 class="cs-card-title">
+
+                Extension Status
+
+            </h2>
+
+            <div
+
+                id="cs-status"
+
+                class="cs-status cs-status-ready">
+
+                <span class="cs-status-dot">
+
+                    ●
+
+                </span>
+
+                <span>
+
+                    Ready
+
+                </span>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Analysis
+        =========================================== -->
+
+        <section class="cs-card">
+
+            <h2 class="cs-card-title">
+
+                Analyze Comments
+
+            </h2>
+
+            <label
+
+                class="cs-label"
+
+                for="cs-limit">
+
+                Number of Comments
+
+            </label>
+
+            <select
+
+                id="cs-limit"
+
+                class="cs-select">
+
+                <option value="100">
+
+                    100 Comments
+
+                </option>
+
+                <option value="250">
+
+                    250 Comments
+
+                </option>
+
+                <option value="500">
+
+                    500 Comments
+
+                </option>
+
+            </select>
+
+            <button
+
+                id="cs-analyze"
+
+                class="cs-btn cs-btn-primary"
+
+                type="button">
+
+                Analyze
+
+            </button>
+
+        </section>
+
+        <!-- ==========================================
+             API Status
+        =========================================== -->
+
+        <section class="cs-card">
+
+            <h2 class="cs-card-title">
+
+                API Status
+
+            </h2>
+
+            <div
+
+                id="cs-api-status"
+
+                class="cs-badge">
+
+                Checking...
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             Footer
+        =========================================== -->
+
+        <footer class="cs-footer">
+
+            <div
+
+                id="cs-version"
+
+                class="cs-version">
+
+                Version 2.0.0
+
+            </div>
+
+            <div class="cs-footer-text">
+
+                <p style="font-size: 12px; color: #888; margin-top: 10px;">
+  Made with ❤️ by <a href="https://www.linkedin.com/in/rishirajgupta04/" target="_blank" style="color: inherit; text-decoration: underline;">Rishi</a>
+</p>
+
+
+            </div>
+
+        </footer>
+
+    </main>
+
+    <script src="../content/utils.js"></script>
+
+    <script src="popup.js"></script>
+
+</body>
+
+</html>

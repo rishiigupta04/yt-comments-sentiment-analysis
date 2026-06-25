@@ -1,0 +1,51 @@
+{
+    "manifest_version": 3,
+
+    "name": "CommentSense",
+
+    "version": "1.8.0",
+
+    "description": "AI-powered YouTube comment sentiment analysis.",
+
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+
+    "host_permissions": [
+        "https://*.youtube.com/*",
+        "https://rishigupta04-yt-comments-sentiment-analyzer.hf.space/*"
+    ],
+
+    "action": {
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.youtube.com/*"
+            ],
+
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+
+    "icons": {
+        "128": "assets/icon.png"
+    },
+
+    "web_accessible_resources": [
+  {
+    "resources": [
+      "assets/*"
+    ],
+    "matches": [
+      "<all_urls>"
+    ]
+  }
+]
+}

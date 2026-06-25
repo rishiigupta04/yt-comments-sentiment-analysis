@@ -1,4 +1,4 @@
 [core]
     remote = myremote
 ['remote "myremote"']
-    url = D:\CampusX Notes\Projects
+    url = s3://yt-comments-analyzer-dvc

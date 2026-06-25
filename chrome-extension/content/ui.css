@@ -1,0 +1,131 @@
+/*
+======================================================
+CommentSense v2
+
+ui.css
+
+Comment Decoration
+
+Owns ONLY analyzed comment styling.
+======================================================
+*/
+
+/* ======================================================
+   Theme
+====================================================== */
+
+:root {
+
+    --cs-positive-bg: rgba(34,197,94,.08);
+    --cs-neutral-bg: rgba(156,163,175,.08);
+    --cs-negative-bg: rgba(239,68,68,.08);
+
+    --cs-positive-border: #22c55e;
+    --cs-neutral-border: #9ca3af;
+    --cs-negative-border: #ef4444;
+
+}
+
+/* ======================================================
+   Comment Decoration
+====================================================== */
+
+.cs-comment-positive {
+
+    background: var(--cs-positive-bg);
+
+    border-left: 3px solid var(--cs-positive-border);
+
+    transition: background .18s ease;
+
+}
+
+.cs-comment-neutral {
+
+    background: var(--cs-neutral-bg);
+
+    border-left: 3px solid var(--cs-neutral-border);
+
+    transition: background .18s ease;
+
+}
+
+.cs-comment-negative {
+
+    background: var(--cs-negative-bg);
+
+    border-left: 3px solid var(--cs-negative-border);
+
+    transition: background .18s ease;
+
+}
+
+/* ======================================================
+   Sentiment Pill
+====================================================== */
+
+.cs-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-left: 8px;
+
+    padding: 2px 8px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    user-select: none;
+
+}
+
+.cs-pill-positive {
+
+    background: rgba(34,197,94,.15);
+
+    color: #22c55e;
+
+}
+
+.cs-pill-neutral {
+
+    background: rgba(156,163,175,.15);
+
+    color: #9ca3af;
+
+}
+
+.cs-pill-negative {
+
+    background: rgba(239,68,68,.15);
+
+    color: #ef4444;
+
+}
+
+/* ======================================================
+   Hover
+====================================================== */
+
+.cs-comment-positive:hover,
+.cs-comment-neutral:hover,
+.cs-comment-negative:hover {
+
+    filter: brightness(1.03);
+
+}
+
+/* ======================================================
+   Hidden
+====================================================== */
+
+.cs-hidden {
+
+    display: none !important;
+
+}

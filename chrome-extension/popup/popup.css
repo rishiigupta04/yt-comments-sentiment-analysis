@@ -1,0 +1,583 @@
+/*
+======================================================
+CommentSense v2
+
+popup.css
+
+Chrome Extension Popup
+
+======================================================
+*/
+
+/* ======================================================
+   Theme
+====================================================== */
+
+:root {
+
+    --cs-primary: #6366f1;
+
+    --cs-positive: #22c55e;
+
+    --cs-negative: #ef4444;
+
+    --cs-neutral: #9ca3af;
+
+    --cs-bg: #09090b;
+
+    --cs-surface: #111827;
+
+    --cs-surface-light: #1f2937;
+
+    --cs-border: rgba(255,255,255,.08);
+
+    --cs-text: #f8fafc;
+
+    --cs-text-muted: #94a3b8;
+
+    --cs-radius: 16px;
+
+    --cs-shadow:
+        0 8px 30px rgba(0,0,0,.35);
+
+    --cs-transition: .18s ease;
+
+    --cs-font:
+        Inter,
+        system-ui,
+        sans-serif;
+
+}
+
+/* ======================================================
+   Reset
+====================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+body {
+
+    width: 360px;
+
+    min-height: 520px;
+
+    background: var(--cs-bg);
+
+    color: var(--cs-text);
+
+    font-family: var(--cs-font);
+
+}
+
+/* ======================================================
+   Popup
+====================================================== */
+
+.cs-popup {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    padding: 18px;
+
+}
+
+/* ======================================================
+   Header
+====================================================== */
+
+.cs-header {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: center;
+
+}
+
+.cs-logo {
+
+    width: 64px;
+
+    height: 64px;
+
+    object-fit: contain;
+
+}
+
+.cs-title {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+}
+
+.cs-subtitle {
+
+    font-size: 13px;
+
+    color: var(--cs-text-muted);
+
+    line-height: 1.5;
+
+}
+
+/* ======================================================
+   Card
+====================================================== */
+
+.cs-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    border-radius: var(--cs-radius);
+
+    background: var(--cs-surface);
+
+    border: 1px solid var(--cs-border);
+
+    box-shadow: var(--cs-shadow);
+
+}
+
+.cs-card-title {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+/* ======================================================
+   Status
+====================================================== */
+
+.cs-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.cs-status-dot {
+
+    font-size: 11px;
+
+}
+
+.cs-status-ready {
+
+    background: rgba(34,197,94,.12);
+
+    color: var(--cs-positive);
+
+}
+
+.cs-status-analyzing {
+
+    background: rgba(99,102,241,.12);
+
+    color: var(--cs-primary);
+
+}
+
+.cs-status-error {
+
+    background: rgba(239,68,68,.12);
+
+    color: var(--cs-negative);
+
+}
+
+.cs-status-offline {
+
+    background: rgba(245,158,11,.12);
+
+    color: #f59e0b;
+
+}
+
+/* ======================================================
+   Form
+====================================================== */
+
+.cs-label {
+
+    font-size: 12px;
+
+    color: var(--cs-text-muted);
+
+}
+
+.cs-select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid var(--cs-border);
+
+    border-radius: 12px;
+
+    background: var(--cs-surface-light);
+
+    color: var(--cs-text);
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: border-color var(--cs-transition);
+
+}
+
+.cs-select:focus {
+
+    border-color: var(--cs-primary);
+
+}
+
+/* ======================================================
+   Button
+====================================================== */
+
+.cs-btn {
+
+    width: 100%;
+
+    min-height: 44px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+
+        background var(--cs-transition),
+
+        transform var(--cs-transition),
+
+        opacity var(--cs-transition);
+
+}
+
+.cs-btn-primary {
+
+    background: var(--cs-primary);
+
+    color: white;
+
+}
+
+.cs-btn-primary:hover {
+
+    filter: brightness(1.08);
+
+}
+
+.cs-btn:active {
+
+    transform: scale(.98);
+
+}
+
+.cs-btn:disabled {
+
+    opacity: .5;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ======================================================
+   API Status
+====================================================== */
+
+.cs-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    min-height: 34px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    border: 1px solid var(--cs-border);
+
+    background: rgba(255,255,255,.04);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+
+        background var(--cs-transition),
+
+        color var(--cs-transition),
+
+        border-color var(--cs-transition);
+
+}
+
+.cs-badge-online {
+
+    background: rgba(34,197,94,.12);
+
+    color: var(--cs-positive);
+
+}
+
+.cs-badge-offline {
+
+    background: rgba(239,68,68,.12);
+
+    color: var(--cs-negative);
+
+}
+
+.cs-badge-loading {
+
+    background: rgba(99,102,241,.12);
+
+    color: var(--cs-primary);
+
+}
+
+/* ======================================================
+   Footer
+====================================================== */
+
+.cs-footer {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 4px;
+
+    text-align: center;
+
+}
+
+.cs-version {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: var(--cs-text);
+
+}
+
+.cs-footer-text {
+
+    font-size: 12px;
+
+    color: var(--cs-text-muted);
+
+}
+
+/* ======================================================
+   Hover & Focus
+====================================================== */
+
+.cs-card:hover {
+
+    border-color: rgba(255,255,255,.14);
+
+}
+
+.cs-select:hover {
+
+    border-color: rgba(255,255,255,.16);
+
+}
+
+.cs-btn:hover:not(:disabled) {
+
+    transform: translateY(-1px);
+
+}
+
+.cs-btn:focus-visible,
+
+.cs-select:focus-visible {
+
+    outline: 2px solid var(--cs-primary);
+
+    outline-offset: 2px;
+
+}
+
+/* ======================================================
+   Loading State
+====================================================== */
+
+.cs-loading {
+
+    pointer-events: none;
+
+    opacity: .7;
+
+}
+
+.cs-loading .cs-btn {
+
+    cursor: progress;
+
+}
+
+/* ======================================================
+   Utilities
+====================================================== */
+
+.cs-hidden {
+
+    display: none !important;
+
+}
+
+.cs-center {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.cs-grow {
+
+    flex: 1;
+
+}
+
+/* ======================================================
+   Scrollbar
+====================================================== */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: rgba(255,255,255,.10);
+
+    border-radius: 999px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+/* ======================================================
+   Reduced Motion
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
+
+/* ======================================================
+   Small Popup Heights
+====================================================== */
+
+@media (max-height: 650px) {
+
+    body {
+
+        min-height: auto;
+
+    }
+
+    .cs-popup {
+
+        padding: 16px;
+
+        gap: 14px;
+
+    }
+
+    .cs-logo {
+
+        width: 56px;
+
+        height: 56px;
+
+    }
+
+}

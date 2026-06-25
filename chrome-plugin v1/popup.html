@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CommentSense
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="popup.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <div class="hero">
+
+            <img
+                src="assets/icon.png"
+                alt="CommentSense"
+                class="logo"
+            >
+
+            <h1>
+
+                CommentSense
+
+            </h1>
+
+            <p>
+
+                Understand YouTube Audience At Scale
+
+            </p>
+
+            <p style="font-size: 12px; color: #888; margin-top: 10px;">
+  Made with ❤️ by <a href="https://www.linkedin.com/in/rishirajgupta04/" target="_blank" style="color: inherit; text-decoration: underline;">Rishi</a>
+</p>
+
+
+        </div>
+
+        <div class="status-grid">
+
+            <div class="status-card">
+
+                <span class="status-dot"></span>
+
+                API Ready
+
+            </div>
+
+            <div class="status-card">
+
+                v1.0
+
+            </div>
+
+        </div>
+
+        <div class="selector-card">
+
+            <label>
+
+                Comments to Analyze
+
+            </label>
+
+            <select
+                id="commentCount"
+            >
+
+                <option value="100">
+
+                    100
+
+                </option>
+
+                <option value="250">
+
+                    250
+
+                </option>
+
+                <option value="500">
+
+                    500
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <button
+            id="analyzeBtn"
+        >
+
+            Analyze Comments
+
+        </button>
+
+        <div
+            id="status"
+        >
+
+            Ready
+
+        </div>
+
+    </div>
+
+    <script src="popup.js"></script>
+
+</body>
+
+</html>
