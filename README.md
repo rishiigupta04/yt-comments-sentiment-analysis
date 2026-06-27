@@ -1,7 +1,20 @@
+
+<div align="center">
 <p align="center">
-  <img src="./logo.png" width="50%">
+  <a href="https://www.youtube.com/watch?v=2WUpTMFsKD4" target="_blank">
+    <img
+      src="./logo.png"
+      alt="CommentSense Demo"
+      width="500"
+    />
+  </a>
 </p>
 
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=2WUpTMFsKD4" target="_blank">
+    <strong>▶ Watch the Demo Video</strong>
+  </a>
+</p>
 
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
@@ -28,6 +41,10 @@ Unlike most sentiment-analysis projects that immediately jump to transformers, C
 * 📖 API Documentation → [https://rishigupta04-yt-comments-sentiment-analyzer.hf.space/docs]
 
 ---
+
+## 🎥 Demo
+
+
 
 # 🎯 Why CommentSense?
 
