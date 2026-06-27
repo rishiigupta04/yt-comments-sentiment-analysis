@@ -450,8 +450,8 @@ if (
         injectToolbar();
 
         colorComments();
+        addSentimentTags()
 
-        addSentimentTags();
 
         updateFilterBadge(
             "All Comments"
@@ -852,6 +852,50 @@ linear-gradient(
 );
 }
 
+.cs-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-left:8px;
+    padding:4px 10px;
+    border-radius:999px;
+    background:#1f2937;
+    border:1px solid rgba(255,255,255,.08);
+    font-size:12px;
+    font-weight:600;
+}
+
+.cs-tag-label{
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.cs-confidence-pill{
+    background:#374151;
+    color:#fff;
+    padding:2px 8px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.cs-sentiment-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    flex:0 0 auto;
+}
+
+.cs-confidence-pill{
+    padding:2px 6px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.10);
+    color:#e2e8f0;
+    font-size:11px;
+    font-weight:700;
+}
+
 .cs-active-filter {
 
 margin-top:14px;
@@ -1058,105 +1102,52 @@ function colorComments() {
         }
     );
 }
+
 function addSentimentTags() {
 
-    storedResults.forEach(
+    storedResults.forEach(result => {
 
-        result => {
+        const authorLine = result.element
+            ?.closest("ytd-comment-thread-renderer")
+            ?.querySelector("#header-author");
 
-            const authorLine =
+        if (!authorLine) return;
 
-            result.element
-            ?.closest(
-                "ytd-comment-thread-renderer"
-            )
+        // Remove old tags
+        authorLine.querySelectorAll(".cs-tag").forEach(tag => tag.remove());
 
-            ?.querySelector(
-                "#header-author"
-            );
+        const tag = document.createElement("span");
+        tag.className = "cs-tag";
 
-            if (
-                !authorLine
-            ) return;
+        const confidence = Math.round(result.confidence * 100);
 
-            authorLine
-            .querySelectorAll(
-                ".cs-tag"
-            )
-            .forEach(
+        let color = "#94a3b8";
+        let emoji = "⚪";
 
-                tag =>
-                tag.remove()
-            );
-
-            const tag =
-
-            document.createElement(
-                "span"
-            );
-
-            tag.className =
-            "cs-tag";
-
-            tag.title =
-
-            `Confidence:
-            ${Math.round(
-                result.confidence
-                * 100
-            )}%`;
-
-            let color =
-            "#94a3b8";
-
-            if (
-                result.sentiment ===
-                "positive"
-            ) {
-
-                color =
-                "#22c55e";
-            }
-
-            if (
-                result.sentiment ===
-                "negative"
-            ) {
-
-                color =
-                "#ef4444";
-            }
-
-            tag.style.marginLeft =
-            "8px";
-
-            tag.style.color =
-            color;
-
-            tag.style.fontWeight =
-            "600";
-
-            tag.style.fontSize =
-            "12px";
-
-            tag.innerHTML =
-
-            `● ${
-                result.sentiment
-                .charAt(0)
-                .toUpperCase()
-
-                +
-
-                result.sentiment
-                .slice(1)
-            }`;
-
-            authorLine.appendChild(
-                tag
-            );
+        if (result.sentiment === "positive") {
+            color = "#22c55e";
+            emoji = "🟢";
         }
-    );
+
+        if (result.sentiment === "negative") {
+            color = "#ef4444";
+            emoji = "🔴";
+        }
+
+       tag.innerHTML = `
+    <span class="cs-tag-label" style="color:${color}">
+        ${emoji} ${result.sentiment.charAt(0).toUpperCase() + result.sentiment.slice(1)}
+    </span>
+
+    <span class="cs-confidence-pill">
+        <span style="opacity:.7;font-weight:500;">Confidence</span>
+        <strong>${confidence}%</strong>
+    </span>
+`;
+
+        authorLine.appendChild(tag);
+    });
+
 }
 
 function filterComments(
