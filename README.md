@@ -39,6 +39,7 @@ Unlike most sentiment-analysis projects that immediately jump to transformers, C
 * 🤗 Hugging Face Model → [https://huggingface.co/rishigupta04/yt-comments-sentiment-analyzer]
 * 🚀 Hugging Face Space → [https://huggingface.co/spaces/rishigupta04/yt-comments-sentiment-analyzer]
 * 📖 API Documentation → [https://rishigupta04-yt-comments-sentiment-analyzer.hf.space/docs]
+* 🔥 Dataset Link → [https://www.kaggle.com/datasets/amaanpoonawala/youtube-comments-sentiment-dataset]
 
 ---
 
