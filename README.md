@@ -1,7 +1,7 @@
 
 <div align="center">
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=2WUpTMFsKD4" target="_blank">
+  <a href="https://youtu.be/Md9ETL8xWzk" target="_blank">
     <img
       src="./logo.png"
       alt="CommentSense Demo"
