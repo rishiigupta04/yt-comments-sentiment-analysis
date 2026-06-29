@@ -43,10 +43,6 @@ Unlike most sentiment-analysis projects that immediately jump to transformers, C
 
 ---
 
-## 🎥 Demo
-
-
-
 # 🎯 Why CommentSense?
 
 Most sentiment-analysis systems are trained on:
